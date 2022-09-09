@@ -1,1 +1,17 @@
 
+.container__todo-list {
+    position: absolute;
+    height: 800px;
+    width: 600px;
+    border: 1px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-img {
+    margin-top: 5rem;
+    height: 700px;
+    width: 500px;
+    z-index: -1;
+}

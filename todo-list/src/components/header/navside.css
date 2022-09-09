@@ -1,9 +1,30 @@
-#side-bar {
-    width: 10rem;
-    
+.offcanvas {
+    height: 60%;
+    min-height: 18rem;
+    width: 20rem !important;
+    border-radius: 0 0 50px 0;
 }
 
-#collapse-icon-box {
-    cursor: pointer;
+.nav {
+    margin-left: -1rem;
 }
 
+.nav-link {
+    color: black;
+    font-size: large;
+    font-weight: bolder;
+    margin: 1rem;
+    border-radius: 20px;
+    height: 3.5rem;
+    width: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: white;
+    background: gray;
+    border-radius: 20px;
+}
