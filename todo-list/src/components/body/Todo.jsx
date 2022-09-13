@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
 import BGIMG from '../../assets/bg-note.jpg'
@@ -9,18 +9,28 @@ const Todo = () => {
   const [todoList, setTodoList] = useState([])
 
   const handleChange = (e) => {
-    console.log(e.target.value)
     setInput(e.target.value)
   }
 
+  const ref = useRef(null)
+
+  useEffect(() => {
+    ref.current.focus()
+  })
+
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    setTodoList([
-      ...todoList, 
-      { id: Math.floor(Math.random() * 10000),
-        text: input
-      }])
+    
+    if (input === "") {
+      return
+    } else {
+      setTodoList([
+        ...todoList, 
+        { id: Math.floor(Math.random() * 10000),
+          text: input
+        }
+      ])
+    }
     setInput('')
   }
 
@@ -29,7 +39,7 @@ const Todo = () => {
       <div className='container__todo'>
         <Form className='d-flex justify-content-center todo__form' onSubmit={handleSubmit}>
           <Form.Group style={{'width': 350}} className=''>
-            <Form.Control size='sm' type='text' placeholder='Todo-List' value={input} onChange={handleChange}></Form.Control>
+            <Form.Control size='sm' type='text' placeholder='Todo-List' value={input} onChange={handleChange} ref={ref}></Form.Control>
           </Form.Group>
           <Button className='ms-2' size='sm' variant='primary' type="submit">Add</Button>
         </Form>
