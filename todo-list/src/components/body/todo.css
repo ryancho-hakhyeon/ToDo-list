@@ -1,23 +1,34 @@
 
 .container__todo-list {
     height: 700px;
-    border: 1px solid black;
 }
 
 .bg-img {
-    border: 1px solid black;
     height: 700px;
     width: 500px;
     z-index: -1;
 }
 
-.todo__form {
-    border: 1px solid black;
+.todo__list {
+    margin-bottom: -5px;
 }
 
-.temp__box{
+.todolist__box{
     margin-top: 4.2rem;
     margin-left: 18.5rem;
-    width: 360px;
     z-index: 1;
+}
+
+.button-icon {
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.text__box{
+    width: 270px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
 }

@@ -47,7 +47,6 @@ const Todo = () => {
       }
       return todo
     })
-
     setTodoList(newTodoList)
   }, [todoList])
 
@@ -58,14 +57,14 @@ const Todo = () => {
     setTodoList(newTodoList)
   }, [todoList])
 
-  const handleEditTodo = () => {
-
-  }
+  const handleEditTodo = useCallback((id) => {
+    console.log(id)
+  }, [])
 
   return (
     <>
       <div className='container__todo'>
-        <Form className='d-flex justify-content-center todo__form' onSubmit={handleSubmit}>
+        <Form className='d-flex justify-content-center' onSubmit={handleSubmit}>
           <Form.Group style={{'width': 350}} className=''>
             <Form.Control size='sm' type='text' placeholder='Todo-List' value={input} onChange={handleChange} ref={ref}></Form.Control>
           </Form.Group>
@@ -77,21 +76,20 @@ const Todo = () => {
             <img src={BGIMG} alt="" className="position-absolute bg-img"/>
           </div>
           
-          <div className='temp__box'>
+          <div className='todolist__box'>
             <Form>
               {
                 todoList.map(todo => (
-                  <div key={ `${todo.id}` } className='d-flex mb-2'>
+                  <div key={ `${todo.id}` } className='d-flex todo__list'>
                     <Form.Check 
                       type='checkbox'
                       checked={todo.completed}
                       onChange={() => handleChecked(todo.id)}
-                      label={`${todo.text}`}
-                      style={{'width': 300}}
+                      className='me-2'
                     />
-                    <FiEdit className='me-2' onClick={ handleEditTodo() }/>
-                    <FcFullTrash onClick={ handleDeleteTodo(todo.id) }/>
-                    
+                    <p className={`text__box ${todo.completed ? 'completed' : ''}`}> { todo.text }</p>
+                    <FiEdit className='me-2 button-icon' onClick={ () => handleEditTodo(todo.id) }/>
+                    <FcFullTrash className='button-icon' onClick={ () => handleDeleteTodo(todo.id) }/>
                   </div>
                 ))
               }
