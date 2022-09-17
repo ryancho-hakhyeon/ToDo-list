@@ -1,0 +1,29 @@
+.about__container {
+    margin-top: -4.4rem;
+}
+
+.about__banner {
+    background: url('../../assets/about-bn.jpg') no-repeat;
+    background-size: 100% 150%;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+    border-radius: 0 0 20px 20px;
+    z-index: -1;
+}
+
+.info__container {
+    background-color: var(--card-bg-color);
+    box-shadow: 0 5px 20px 0;
+    border-radius: 20px;
+    width: 400px;
+    height: 600px;
+}
+
+.img-me {
+    width: 130px;
+    height: 130px;
+    border-radius: 75px;
+    border: 4px outset #438396;
+    
+}

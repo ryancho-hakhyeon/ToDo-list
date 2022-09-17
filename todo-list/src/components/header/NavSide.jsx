@@ -12,7 +12,7 @@ const NavSide = () => {
 
   return (
     <>
-      <div className="m-3">
+      <div className="m-3 side__container">
         <Button className="shadow" variant='outline-light'><FaBars onClick={showSidebar}/></Button>
       </div>
 
@@ -23,7 +23,7 @@ const NavSide = () => {
         <Offcanvas.Body>
           <Nav className="justify-content-end flex-column pe-3 mb-2">
             <Nav.Link href='/'>Todo List</Nav.Link>
-            <Nav.Link href='#'>About</Nav.Link>
+            <Nav.Link href='/About'>About</Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

@@ -1,3 +1,7 @@
+.side__container {
+    z-index: 10;
+}
+
 .offcanvas {
     height: 60%;
     min-height: 18rem;
